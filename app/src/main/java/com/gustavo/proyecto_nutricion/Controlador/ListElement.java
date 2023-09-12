@@ -1,5 +1,5 @@
 package com.gustavo.proyecto_nutricion.Controlador;
-
+//Esta clase representa un elemento de una lista que contiene información sobre un producto alimenticio, como su color, nombre, calorías y estado
 public class ListElement {
     public String color;
     public String name;

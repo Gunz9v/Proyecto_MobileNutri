@@ -18,22 +18,23 @@ import java.util.List;
 
 
 public class Carnes extends Fragment implements RecyclerViewInterface {
-
+    //Instanciar las variables
     List<ListElement> elements;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     RecyclerView recyclerView;
     private String mParam1;
     private String mParam2;
-    public static Frutas newInstance(String param1, String param2) {
-        Frutas fragment = new Frutas();
+    //Este método estático se utiliza para crear una nueva instancia del fragmento Carnes y configurar argumentos si es necesario. Esto se hace para pasar datos al fragmento cuando se crea.
+    public static Carnes newInstance(String param1, String param2) {
+        Carnes fragment = new Carnes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
+    //En este método, se obtienen los argumentos pasados al fragmento, si los hay. Estos argumentos pueden ser utilizados para configurar el fragmento
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,20 +45,20 @@ public class Carnes extends Fragment implements RecyclerViewInterface {
 
     }
 
-
+    //En este método, se obtienen los argumentos pasados al fragmento, si los hay. Estos argumentos pueden ser utilizados para configurar el fragmento
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflar el diseño de este fragmento
         View view = inflater.inflate(R.layout.fragment_carnes, container, false);
-
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerViewCarnes);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         init(view);
         return view;
-
     }
+    // Este método se utiliza para inicializar los elementos y los detalles de los productos. Se crean instancias de objetos ListElement y ProductDetail y se agregan a las listas elements y productDetails. Estos datos se utilizarán más tarde para llenar el RecyclerView y para pasar detalles a la actividad Detalles.
+
+    //Iniciador
     public void init(View view){
 
         elements = new ArrayList<>();
@@ -70,6 +71,7 @@ public class Carnes extends Fragment implements RecyclerViewInterface {
 
 
     }
+    //Se crea el metodo al usar IMPLEMENTS RecyclerViewInterface
     @Override
     public void onItemClick(int position) {
 
