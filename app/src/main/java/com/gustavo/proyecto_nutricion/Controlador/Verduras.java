@@ -84,6 +84,9 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
         elements.add(new ListElement("#775447", "Pear","22Kcal", "100g"));
         productDetails.add(new ProductDetail("Pear", "detail1", "detail2", "detail3", "detail4"));
 
+        elements.add(new ListElement("#775447", "asd","asd", "asd"));
+        productDetails.add(new ProductDetail("asd", "detail1", "detail2", "detail3", "detail4"));
+
         ListAdapter listAdapter= new ListAdapter(elements,this);
         recyclerView.setAdapter(listAdapter);
 
