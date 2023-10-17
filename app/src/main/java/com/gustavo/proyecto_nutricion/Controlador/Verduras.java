@@ -77,20 +77,24 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447", "Choclo","341Kcal", "100g"));
+        elements.add(new ListElement("#775447","Chris Bumstead", "Pectorales/Hombros","Like"));
 
         productDetails = new ArrayList<>();
-        productDetails.add(new ProductDetail("Choclo", "CON QUESO", "detail2", "detail3", "detail4"));
+        productDetails.add(new ProductDetail("Chris Bumstead", "Día 1:Espalda\nPeso muerto: 4 x 10/8/8/Fallo\n" +
+                "Remo con barra: 4 x 12/10/10/8 (2 sets agarre supino/2 sets agarre prono)\n" +
+                "Dominadas con agarre amplío: 4 x 12-15\n" +
+                "Jalón al pecho: 4 x 12-15\n" +
+                "Remo con mancuerna: 4 x 15/12/10/10\n" +
+                "Remo en máquina: 3 x 20\n" +
+                "Hiperextensiones: 2 x Fallo", "", "", "", "https://www.youtube.com/embed/shPkGKhwvCg?si=4ZKeqlG_RTPPFi1X"));
 
-        elements.add(new ListElement("#775447", "Frijoles Negros","373Kcal", "100g"));
-        productDetails.add(new ProductDetail("Frijoles Negros", "detail1", "detail2", "detail3", "detail4"));
+        elements.add(new ListElement("#775447", "Kevin Levron","Pectorales", "100g"));
+        productDetails.add(new ProductDetail("Kevin Levron", "detail1", "detail2", "detail3", "detail4","https://www.youtube.com/embed/6zqVLu_Sf2I?si=LSBq1Lnw0Zo-rajw"));
 
-        elements.add(new ListElement("#775447", "Pear","22Kcal", "100g"));
-        productDetails.add(new ProductDetail("Pear", "detail1", "detail2", "detail3", "detail4"));
+        elements.add(new ListElement("#775447", "Ronnie Coleman","22Kcal", "100g"));
+        productDetails.add(new ProductDetail("Ronnie Coleman", "detail1", "detail2", "detail3", "detail4","https://www.youtube.com/embed/XB4RuLMsmsU?si=lS2Xhv0-kRUTXyYt"));
 
-        elements.add(new ListElement("#775447", "asd","asd", "asd"));
-        productDetails.add(new ProductDetail("asd", "detail1", "detail2", "detail3", "detail4"));
-//Se crea una instancia de ListAdapter y se pasa la lista de elements y la implementación de RecyclerViewInterface (que incluye el método onItemClick) como argumentos. Finalmente, se establece el adaptador en el RecyclerView.
+        //Se crea una instancia de ListAdapter y se pasa la lista de elements y la implementación de RecyclerViewInterface (que incluye el método onItemClick) como argumentos. Finalmente, se establece el adaptador en el RecyclerView.
         ListAdapter listAdapter= new ListAdapter(elements,this);
         recyclerView.setAdapter(listAdapter);
 
@@ -101,7 +105,7 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
         //
         Intent intent = new Intent(requireActivity(), Detalles.class);
         intent.putExtra("nombre", elements.get(position).getName());
-        intent.putExtra("calorias", elements.get(position).getCalorias());
+        intent.putExtra("musculo", elements.get(position).getCalorias());
 
         for(ProductDetail productDetail: productDetails) {
             if (productDetail.getName().equals(elements.get(position).getName())) {
@@ -109,6 +113,7 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
                 intent.putExtra("detail2", productDetail.getDetail2());
                 intent.putExtra("detail3", productDetail.getDetail3());
                 intent.putExtra("detail4", productDetail.getDetail4());
+                intent.putExtra("videoURL",productDetail.getVideoURL());
 
             }
         }

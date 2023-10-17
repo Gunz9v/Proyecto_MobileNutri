@@ -49,6 +49,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>   
         //Este método se utiliza para enlazar los datos de un elemento de la lista (ListElement) con las vistas dentro del ViewHolder. Se establecen los valores de texto en name, calorias, y status a partir de los datos proporcionados por el objeto ListElement.
         void bindData(final ListElement item){
             //iconImage.setColorFilter(Color.parseColor(item.getColor()), PorterDuff.Mode.SRC_IN);
+
             name.setText(item.getName());
             calorias.setText(item.getCalorias());
             status.setText(item.getStatus());

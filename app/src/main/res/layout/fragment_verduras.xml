@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:text="Lista"
+            android:text="Profesionales"
             android:textSize="36sp"
             android:textStyle="bold"/>
 

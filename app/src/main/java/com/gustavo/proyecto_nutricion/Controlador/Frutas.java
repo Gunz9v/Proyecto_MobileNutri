@@ -15,6 +15,8 @@ import com.gustavo.proyecto_nutricion.Detalles;
 import com.gustavo.proyecto_nutricion.MainActivity;
 import com.gustavo.proyecto_nutricion.R;
 import com.gustavo.proyecto_nutricion.RecyclerViewInterface;
+import com.gustavo.proyecto_nutricion.detalles_gyms;
+import com.gustavo.proyecto_nutricion.models.ProductDetail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,9 +69,9 @@ public class Frutas extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447", "Banana","Calorias", "Activo"));
-        elements.add(new ListElement("#775447", "Apple","Calorias", "Cancelado"));
-        elements.add(new ListElement("#775447", "Pear","Calorias", "Activo"));
+        elements.add(new ListElement("#775447", "Mega Force","Local: Santa Rosa", "Abierto"));
+        elements.add(new ListElement("#775447", "Hard Fit","Local: Santa Rosa", "Abierto"));
+        elements.add(new ListElement("#775447", "Ramses Gym","Local: Santa Rosa", "Abierto"));
 
         ListAdapter listAdapter= new ListAdapter(elements, this);
         recyclerView.setAdapter(listAdapter);
@@ -79,7 +81,9 @@ public class Frutas extends Fragment implements RecyclerViewInterface {
     //Se crea el metodo al usar IMPLEMENTS RecyclerViewInterface
     @Override
     public void onItemClick(int position) {
+        //
+        Intent intent = new Intent(requireActivity(), detalles_gyms.class);
 
-
+        startActivity(intent);
     }
 }

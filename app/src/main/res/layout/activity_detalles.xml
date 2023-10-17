@@ -13,8 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="TextView" />
-
+        android:text="TextView"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        />
 
 
     <TextView
@@ -23,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/detallesTextView"
@@ -31,7 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="Detalles" />
+        android:text="Rutina Semanal"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/detailTextView3"
@@ -60,4 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:id="@+id/webViewYt"/>
 </LinearLayout>
