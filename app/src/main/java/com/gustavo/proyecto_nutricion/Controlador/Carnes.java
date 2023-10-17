@@ -62,11 +62,11 @@ public class Carnes extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447", "Banana","Calorias", "Activo"));
-        elements.add(new ListElement("#775447", "Apple","Calorias", "Cancelado"));
-        elements.add(new ListElement("#775447", "Pear","Calorias", "Activo"));
+        elements.add(new ListElement("#775447", "Banana","Calorias", "Activo", "Banana"));
+        elements.add(new ListElement("#775447", "Apple","Calorias", "Cancelado", "Apple"));
+        elements.add(new ListElement("#775447", "Pear","Calorias", "Activo", "Pear"));
 
-        ListAdapter listAdapter= new ListAdapter(elements, this);
+        ListAdapter listAdapter= new ListAdapter(elements, this, requireContext());
         recyclerView.setAdapter(listAdapter);
 
 

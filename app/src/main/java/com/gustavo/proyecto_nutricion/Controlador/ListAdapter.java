@@ -2,6 +2,7 @@ package com.gustavo.proyecto_nutricion.Controlador;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -11,16 +12,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gustavo.proyecto_nutricion.R;
 import com.gustavo.proyecto_nutricion.RecyclerViewInterface;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>   {
     private final RecyclerViewInterface recyclerViewInterface;
 
+    private Map<String, Integer> elementImageMap;
+
+    private Context context;
+    private TypedArray defaultImages;
     public class ViewHolder extends RecyclerView.ViewHolder   {
         ImageView iconImage;
         TextView name,calorias, status;
@@ -60,9 +68,21 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>   
     private List<ListElement> mData;
     //Constructor, El adaptador se inicializa con una lista de elementos (itemList) y una instancia de RecyclerViewInterface. Esta interfaz se utiliza para manejar eventos de clic en los elementos de la lista.
 
-    public ListAdapter(List<ListElement> itemList, RecyclerViewInterface recyclerViewInterface){
+    public ListAdapter(List<ListElement> itemList, RecyclerViewInterface recyclerViewInterface, Context context){
         this.recyclerViewInterface = recyclerViewInterface;
-        this.mData=itemList;
+        this.mData = itemList;
+        this.context = context;
+
+        String[] elementNames = context.getResources().getStringArray(R.array.default_image_names);
+        // Obtiene las imágenes por defecto del archivo arrays.xml
+        defaultImages = context.getResources().obtainTypedArray(R.array.default_images);
+
+        // Crea un mapa para mapear nombres de elementos a las posiciones en el TypedArray
+        elementImageMap = new HashMap<>();
+        for (int i = 0; i < elementNames.length; i++) {
+            int defaultImageResource = defaultImages.getResourceId(i, -1);
+            elementImageMap.put(elementNames[i], defaultImageResource);
+        }
     }
 
     //Este método devuelve el número total de elementos en la lista, que es igual al tamaño de la lista de datos (mData).
@@ -82,9 +102,20 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>   
     //Este método se llama cuando se actualiza un elemento en el RecyclerView. Aquí se llama al método bindData del ViewHolder para enlazar los datos del elemento en la posición actual con las vistas en el ViewHolder.
     @Override
     public void onBindViewHolder(final ListAdapter.ViewHolder holder, final int position){
-        holder.bindData(mData.get(position));
+        ListElement item = mData.get(position);
+        holder.bindData(item);
+        Integer resourceId = elementImageMap.get(item.getImageName());
+        if (resourceId != null) {
+            holder.iconImage.setImageResource(resourceId);
+        }
+
     }
 
+    @Override
+    public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+        defaultImages.recycle();
+        super.onDetachedFromRecyclerView(recyclerView);
+    }
 
 
 }

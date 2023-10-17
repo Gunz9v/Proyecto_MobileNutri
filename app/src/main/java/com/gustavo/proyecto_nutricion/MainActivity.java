@@ -7,8 +7,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TableLayout;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.gustavo.proyecto_nutricion.Controlador.ListAdapter;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     PagerController pagerAdapter;
 
+    boolean islikedone=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

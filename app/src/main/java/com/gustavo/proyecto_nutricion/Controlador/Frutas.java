@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.gustavo.proyecto_nutricion.Detalles;
 import com.gustavo.proyecto_nutricion.MainActivity;
 import com.gustavo.proyecto_nutricion.R;
@@ -31,6 +32,7 @@ public class Frutas extends Fragment implements RecyclerViewInterface {
     RecyclerView recyclerView;
     private String mParam1;
     private String mParam2;
+
     //Este método estático se utiliza para crear una nueva instancia del fragmento Frutas y configurar argumentos si es necesario. Esto se hace para pasar datos al fragmento cuando se crea.
     public static Frutas newInstance(String param1, String param2) {
         Frutas fragment = new Frutas();
@@ -44,6 +46,7 @@ public class Frutas extends Fragment implements RecyclerViewInterface {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -69,11 +72,11 @@ public class Frutas extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447", "Mega Force","Local: Santa Rosa", "Abierto"));
-        elements.add(new ListElement("#775447", "Hard Fit","Local: Santa Rosa", "Abierto"));
-        elements.add(new ListElement("#775447", "Ramses Gym","Local: Santa Rosa", "Abierto"));
+        elements.add(new ListElement("#775447", "Mega Force","Local: Santa Rosa", "Abierto", "Mega Force"));
+        elements.add(new ListElement("#775447", "Hard Fit","Local: Santa Rosa", "Abierto", "Hard Fit"));
+        elements.add(new ListElement("#775447", "Ramses Gym","Local: Santa Rosa", "Abierto", "Ramses Gym"));
 
-        ListAdapter listAdapter= new ListAdapter(elements, this);
+        ListAdapter listAdapter= new ListAdapter(elements, this, requireContext());
         recyclerView.setAdapter(listAdapter);
 
 

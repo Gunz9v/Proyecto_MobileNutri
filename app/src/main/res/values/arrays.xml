@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="default_image_names">
+        <item>Mega Force</item>
+        <item>Hard Fit</item>
+        <item>Ramses Gym</item>
+        <item>Chris Bumstead</item>
+        <item>Kevin Levron</item>
+        <item>Ronnie Coleman</item>
+        <!-- Agrega más nombres de elementos y referencias a imágenes según sea necesario -->
+    </string-array>
+    <array name="default_images">
+        <item>@drawable/mega_force</item>
+        <item>@drawable/hardfit</item>
+        <item>@drawable/ramsesgym</item>
+        <item>@drawable/chris_b</item>
+        <item>@drawable/kevinlevron</item>
+        <item>@drawable/ronniecoleman</item>
+    </array>
+</resources>

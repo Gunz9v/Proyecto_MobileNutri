@@ -77,7 +77,7 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447","Chris Bumstead", "Pectorales/Hombros","Like"));
+        elements.add(new ListElement("#775447","Chris Bumstead", "Pectorales/Hombros","Like", "Chris Bumstead"));
 
         productDetails = new ArrayList<>();
         productDetails.add(new ProductDetail("Chris Bumstead", "Día 1:Espalda\nPeso muerto: 4 x 10/8/8/Fallo\n" +
@@ -88,14 +88,14 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
                 "Remo en máquina: 3 x 20\n" +
                 "Hiperextensiones: 2 x Fallo", "", "", "", "https://www.youtube.com/embed/shPkGKhwvCg?si=4ZKeqlG_RTPPFi1X"));
 
-        elements.add(new ListElement("#775447", "Kevin Levron","Pectorales", "100g"));
+        elements.add(new ListElement("#775447", "Kevin Levron","Pectorales", "100g", "Kevin Levron"));
         productDetails.add(new ProductDetail("Kevin Levron", "detail1", "detail2", "detail3", "detail4","https://www.youtube.com/embed/6zqVLu_Sf2I?si=LSBq1Lnw0Zo-rajw"));
 
-        elements.add(new ListElement("#775447", "Ronnie Coleman","22Kcal", "100g"));
+        elements.add(new ListElement("#775447", "Ronnie Coleman","22Kcal", "100g", "Ronnie Coleman"));
         productDetails.add(new ProductDetail("Ronnie Coleman", "detail1", "detail2", "detail3", "detail4","https://www.youtube.com/embed/XB4RuLMsmsU?si=lS2Xhv0-kRUTXyYt"));
 
         //Se crea una instancia de ListAdapter y se pasa la lista de elements y la implementación de RecyclerViewInterface (que incluye el método onItemClick) como argumentos. Finalmente, se establece el adaptador en el RecyclerView.
-        ListAdapter listAdapter= new ListAdapter(elements,this);
+        ListAdapter listAdapter= new ListAdapter(elements,this, requireContext());
         recyclerView.setAdapter(listAdapter);
 
     }
