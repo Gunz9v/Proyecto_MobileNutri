@@ -1,5 +1,6 @@
 package com.gustavo.proyecto_nutricion.Controlador;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 
 import com.gustavo.proyecto_nutricion.R;
 import com.gustavo.proyecto_nutricion.RecyclerViewInterface;
+import com.gustavo.proyecto_nutricion.detalles_gyms;
+import com.gustavo.proyecto_nutricion.detalles_tienda;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,9 +65,9 @@ public class Carnes extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447", "Banana","Calorias", "Activo", "Banana"));
-        elements.add(new ListElement("#775447", "Apple","Calorias", "Cancelado", "Apple"));
-        elements.add(new ListElement("#775447", "Pear","Calorias", "Activo", "Pear"));
+        elements.add(new ListElement("#775447", "Shaker Kevin Levron","35 soles", "Stock", "Shaker Kevin Levron"));
+        elements.add(new ListElement("#775447", "Maletin Kevin Levron","150 soles", "Stock", "Maletin Kevin Levron"));
+        elements.add(new ListElement("#775447", "Crea Kevin Levron","180 soles", "Agotado", "Creatina Kevin Levron"));
 
         ListAdapter listAdapter= new ListAdapter(elements, this, requireContext());
         recyclerView.setAdapter(listAdapter);
@@ -74,7 +77,7 @@ public class Carnes extends Fragment implements RecyclerViewInterface {
     //Se crea el metodo al usar IMPLEMENTS RecyclerViewInterface
     @Override
     public void onItemClick(int position) {
-
-
+        Intent intent = new Intent(requireActivity(), detalles_tienda.class);
+        startActivity(intent);
     }
 }

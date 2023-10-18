@@ -77,7 +77,7 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
     public void init(View view){
 
         elements = new ArrayList<>();
-        elements.add(new ListElement("#775447","Chris Bumstead", "Pectorales/Hombros","Like", "Chris Bumstead"));
+        elements.add(new ListElement("#775447","Chris Bumstead", "Pectorales/Hombros","Activo", "Chris Bumstead"));
 
         productDetails = new ArrayList<>();
         productDetails.add(new ProductDetail("Chris Bumstead", "Día 1:Espalda\nPeso muerto: 4 x 10/8/8/Fallo\n" +
@@ -88,11 +88,31 @@ public class Verduras extends Fragment implements RecyclerViewInterface {
                 "Remo en máquina: 3 x 20\n" +
                 "Hiperextensiones: 2 x Fallo", "", "", "", "https://www.youtube.com/embed/shPkGKhwvCg?si=4ZKeqlG_RTPPFi1X"));
 
-        elements.add(new ListElement("#775447", "Kevin Levron","Pectorales", "100g", "Kevin Levron"));
-        productDetails.add(new ProductDetail("Kevin Levron", "detail1", "detail2", "detail3", "detail4","https://www.youtube.com/embed/6zqVLu_Sf2I?si=LSBq1Lnw0Zo-rajw"));
+        elements.add(new ListElement("#775447", "Kevin Levron","Brazos", "Retirado", "Kevin Levron"));
+        productDetails.add(new ProductDetail("Kevin Levron", "Rutina de brazo de Kevin Levrone\n" +
+                "Ejercicio / Series / Repeticiones\n" +
+                "\n" +
+                "Curl con barra, de pie / 4 / 12\n" +
+                "Curl con mancuerna, sentado / 4 / 12\n" +
+                "Curl con mancuerna, inclinado / 4 / 12\n" +
+                "Curl en Banco Scout / 4 / 12\n" +
+                "Curl de concentración en polea / 4 / 10\n" +
+                "Extensión de tríceps a un brazo / 4 / 8\n" +
+                "Press francés en polea / 4 / 15\n" +
+                "Jalones en polea / 4 / 15\n" +
+                "Jalones con agarre invertido / 6 / 12", "", "", "","https://www.youtube.com/embed/6zqVLu_Sf2I?si=LSBq1Lnw0Zo-rajw"));
 
-        elements.add(new ListElement("#775447", "Ronnie Coleman","22Kcal", "100g", "Ronnie Coleman"));
-        productDetails.add(new ProductDetail("Ronnie Coleman", "detail1", "detail2", "detail3", "detail4","https://www.youtube.com/embed/XB4RuLMsmsU?si=lS2Xhv0-kRUTXyYt"));
+        elements.add(new ListElement("#775447", "Ronnie Coleman","Pectorales", "Retirado", "Ronnie Coleman"));
+        productDetails.add(new ProductDetail("Ronnie Coleman", "Día 1:PECHO\n" +
+                "Press de banca, 5 series- 12 repeticiones\n" +
+                "Press de banca inclinado con barra 3 series - 12 repeticiones\n" +
+                "Press de banca plano con mancuernas 3 series - 12 repeticiones\n" +
+                "Aperturas banco plano, 4 series - 12 repeticiones\n" +
+                "TRICEPS\n" +
+                "\n" +
+                "Extensiones sentado con barra Z 3 series - 12 repeticiones\n" +
+                "Extensiones sentado con mancuernas 4 series - 12 repeticiones\n" +
+                "Press de banca agarre cerrado 4 series - 12 repeticiones", "", "", "","https://www.youtube.com/embed/XB4RuLMsmsU?si=lS2Xhv0-kRUTXyYt"));
 
         //Se crea una instancia de ListAdapter y se pasa la lista de elements y la implementación de RecyclerViewInterface (que incluye el método onItemClick) como argumentos. Finalmente, se establece el adaptador en el RecyclerView.
         ListAdapter listAdapter= new ListAdapter(elements,this, requireContext());

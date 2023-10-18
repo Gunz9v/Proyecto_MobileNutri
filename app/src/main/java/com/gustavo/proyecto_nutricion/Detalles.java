@@ -16,9 +16,9 @@ public class Detalles extends AppCompatActivity {
         setContentView(R.layout.activity_detalles);
 
 
-
         // Obtener el Intent que inició esta actividad
         Intent intent = getIntent();
+        startService(new Intent(this, BackgroundSoundService.class));
         // Recuperar los valores de los extras usando las claves
         String nombre = intent.getStringExtra("nombre");
         String musculo = intent.getStringExtra("musculo");
@@ -51,9 +51,14 @@ public class Detalles extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
 
-
-
-
         // y así sucesivamente para los demás valores...
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // Detener el servicio de reproducción de sonido cuando la actividad se destruye
+        stopService(new Intent(this, BackgroundSoundService.class));
+    }
+
 }

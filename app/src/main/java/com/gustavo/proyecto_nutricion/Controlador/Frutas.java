@@ -86,7 +86,6 @@ public class Frutas extends Fragment implements RecyclerViewInterface {
     public void onItemClick(int position) {
         //
         Intent intent = new Intent(requireActivity(), detalles_gyms.class);
-
         startActivity(intent);
     }
 }

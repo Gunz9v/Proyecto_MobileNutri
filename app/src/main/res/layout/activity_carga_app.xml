@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/txtPara"
-        android:layout_width="23dp"
+        android:layout_width="30dp"
         android:layout_height="16dp"
         android:text="Para"
         app:layout_constraintBottom_toTopOf="@+id/txtGymrats"

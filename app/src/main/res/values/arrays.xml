@@ -7,6 +7,9 @@
         <item>Chris Bumstead</item>
         <item>Kevin Levron</item>
         <item>Ronnie Coleman</item>
+        <item>Shaker Kevin Levron</item>
+        <item>Maletin Kevin Levron</item>
+        <item>Creatina Kevin Levron</item>
         <!-- Agrega más nombres de elementos y referencias a imágenes según sea necesario -->
     </string-array>
     <array name="default_images">
@@ -16,5 +19,8 @@
         <item>@drawable/chris_b</item>
         <item>@drawable/kevinlevron</item>
         <item>@drawable/ronniecoleman</item>
+        <item>@drawable/shaker_kl</item>
+        <item>@drawable/maletin_kl</item>
+        <item>@drawable/creatinakl</item>
     </array>
 </resources>
